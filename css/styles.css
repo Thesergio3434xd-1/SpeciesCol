@@ -1,0 +1,1644 @@
+/* Estilos Generales */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-green: #22c55e;
+    --secondary-green: #16a34a;
+    --dark-green: #15803d;
+    --light-green: #86efac;
+    --text-dark: #1f2937;
+    --text-light: #6b7280;
+    --bg-light: #f0fdf4;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    overflow-x: hidden;
+    color: var(--text-dark);
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-fade-in {
+    animation: fadeIn 1s ease-out;
+}
+
+.animate-fade-in-delay {
+    animation: fadeIn 1s ease-out 0.3s both;
+}
+
+.animate-fade-in-delay-2 {
+    animation: fadeIn 1s ease-out 0.6s both;
+}
+
+/* Navbar */
+.navbar {
+    background: linear-gradient(135deg, var(--primary-green) 0%, var(--secondary-green) 100%) !important;
+    box-shadow: 0 4px 20px rgba(34, 197, 94, 0.3);
+    transition: all 0.3s ease;
+    padding: 1rem 0;
+}
+
+.navbar-brand {
+    font-size: 1.6rem;
+    font-weight: 700;
+    transition: transform 0.3s ease;
+    color: white !important;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.navbar-brand:hover {
+    transform: scale(1.05);
+}
+
+.navbar-logo {
+    height: 45px;
+    width: auto;
+    transition: transform 0.3s ease;
+    filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.3));
+}
+
+.navbar-brand:hover .navbar-logo {
+    transform: rotate(5deg);
+}
+
+.navbar-nav .nav-link {
+    color: rgba(255, 255, 255, 0.95) !important;
+    font-weight: 500;
+    padding: 0.5rem 1.2rem !important;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+    margin: 0 0.2rem;
+}
+
+.navbar-nav .nav-link:hover {
+    background: rgba(255, 255, 255, 0.2);
+    color: white !important;
+    transform: translateY(-2px);
+}
+
+.navbar-nav .nav-link.active {
+    background: white;
+    color: var(--secondary-green) !important;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.navbar-nav .nav-link i {
+    font-size: 1.1rem;
+}
+
+/* Hero Section con imagen de fondo */
+.hero-section {
+    height: 100vh;
+    position: relative;
+    background: linear-gradient(135deg, var(--primary-green) 0%, var(--secondary-green) 100%);
+    background-image: 
+        linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.4)),
+        url('https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=2071&q=80');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-image 1.5s ease-in-out;
+}
+
+.hero-overlay {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.25);
+}
+
+.hero-section h1 {
+    text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.4);
+    font-weight: 800;
+    letter-spacing: -1px;
+}
+
+.hero-section p {
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.4);
+    font-size: 1.4rem;
+    font-weight: 500;
+}
+
+/* Hero Stats Bubbles */
+.hero-stats {
+    margin: 30px 0;
+}
+
+.stat-bubble {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 20px;
+    transition: all 0.3s ease;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.stat-bubble:hover {
+    transform: translateY(-10px) scale(1.05);
+    background: rgba(255, 255, 255, 0.25);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+}
+
+.stat-number {
+    font-size: 2.5rem;
+    font-weight: 900;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.stat-label {
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.95);
+    font-weight: 600;
+}
+
+.btn-hero {
+    background: white !important;
+    color: var(--secondary-green) !important;
+    font-weight: 700;
+    font-size: 1.2rem;
+    padding: 15px 40px;
+    border: none;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+    border-radius: 50px;
+}
+
+.btn-hero:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+    background: var(--light-green) !important;
+}
+
+/* Cards */
+.hover-card {
+    transition: all 0.3s ease;
+    border: none;
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(34, 197, 94, 0.1);
+}
+
+.hover-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(34, 197, 94, 0.3) !important;
+}
+
+.hover-card .card-title {
+    color: var(--secondary-green);
+    font-weight: 700;
+}
+
+.hover-card .card-text {
+    color: var(--text-dark);
+    line-height: 1.7;
+}
+
+.hover-card .btn {
+    border: 2px solid var(--primary-green);
+    color: var(--primary-green);
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.hover-card .btn:hover {
+    background: var(--primary-green);
+    color: white;
+    transform: translateX(5px);
+}
+
+.card-img-container {
+    overflow: hidden;
+    height: 250px;
+}
+
+.card-img-placeholder {
+    height: 100%;
+    transition: transform 0.3s ease;
+}
+
+.hover-card:hover .card-img-placeholder {
+    transform: scale(1.1);
+}
+
+/* Conservation Image */
+.conservation-img {
+    height: 400px;
+    margin-bottom: 20px;
+}
+
+/* Conservation Media Container */
+.conservation-media-container {
+    animation: fadeIn 1s ease-out;
+}
+
+.conservation-video-wrapper {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 40px rgba(34, 197, 94, 0.3);
+    border: 3px solid var(--primary-green);
+}
+
+.conservation-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+.conservation-images {
+    margin-top: 15px;
+}
+
+.conservation-thumbnail {
+    position: relative;
+    width: 100%;
+    padding-bottom: 100%; /* 1:1 Aspect Ratio */
+    border-radius: 15px;
+    overflow: hidden;
+    background-size: cover;
+    background-position: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.conservation-thumbnail:hover {
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 8px 25px rgba(34, 197, 94, 0.4);
+}
+
+.thumbnail-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.7));
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.conservation-thumbnail:hover .thumbnail-overlay {
+    opacity: 1;
+}
+
+.thumbnail-overlay i {
+    font-size: 2rem;
+    margin-bottom: 5px;
+}
+
+.thumbnail-overlay span {
+    font-size: 0.9rem;
+    font-weight: 700;
+}
+
+/* Bioma Stats Mini */
+.bioma-stats-mini {
+    display: flex;
+    gap: 12px;
+    margin: 18px 0;
+    flex-wrap: wrap;
+}
+
+.stat-mini {
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    padding: 12px 18px;
+    border-radius: 15px;
+    text-align: center;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    min-width: 85px;
+    transition: all 0.3s ease;
+}
+
+.stat-mini:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: translateY(-3px);
+}
+
+.stat-mini-number {
+    display: block;
+    font-size: 1.5rem;
+    font-weight: 900;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    line-height: 1.1;
+}
+
+.stat-mini-label {
+    display: block;
+    font-size: 0.75rem;
+    color: rgba(255, 255, 255, 0.95);
+    margin-top: 5px;
+    font-weight: 600;
+}
+
+.bioma-description {
+    font-size: 1.05rem;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+@media (min-width: 768px) {
+    .conservation-img {
+        margin-bottom: 0;
+    }
+}
+
+/* Accordion personalizado */
+.accordion-button:not(.collapsed) {
+    background: linear-gradient(135deg, var(--primary-green), var(--secondary-green));
+    color: white;
+    font-weight: 600;
+}
+
+.accordion-button {
+    color: var(--text-dark);
+    font-weight: 600;
+}
+
+.accordion-button:focus {
+    box-shadow: 0 0 0 0.25rem rgba(34, 197, 94, 0.25);
+}
+
+.accordion-body {
+    background: var(--bg-light);
+    color: var(--text-dark);
+    line-height: 1.8;
+}
+
+/* Estadísticas */
+.bg-success {
+    background: linear-gradient(135deg, var(--primary-green), var(--secondary-green)) !important;
+}
+
+.stat-card {
+    padding: 20px 10px;
+    transition: all 0.3s ease;
+}
+
+.stat-card:hover {
+    transform: translateY(-10px);
+}
+
+.stat-card i {
+    transition: all 0.3s ease;
+}
+
+.stat-card:hover i {
+    transform: scale(1.2);
+}
+
+.counter {
+    font-size: 3.5rem;
+    font-weight: 900;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 768px) {
+    .counter {
+        font-size: 2rem;
+    }
+    
+    .stat-card i {
+        font-size: 2.5rem !important;
+    }
+    
+    .stat-card p {
+        font-size: 0.85rem;
+    }
+}
+
+/* Formulario */
+.form-control {
+    border: 2px solid #e5e7eb;
+    border-radius: 12px;
+    padding: 12px 16px;
+    transition: all 0.3s ease;
+}
+
+.form-control:focus {
+    border-color: var(--primary-green);
+    box-shadow: 0 0 0 0.25rem rgba(34, 197, 94, 0.15);
+    background: var(--bg-light);
+}
+
+.form-label {
+    font-weight: 600;
+    color: var(--text-dark);
+    margin-bottom: 0.7rem;
+}
+
+#contacto .btn-success {
+    background: linear-gradient(135deg, var(--primary-green), var(--secondary-green));
+    border: none;
+    padding: 15px;
+    font-weight: 700;
+    font-size: 1.1rem;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+}
+
+#contacto .btn-success:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(34, 197, 94, 0.4);
+}
+
+/* Footer */
+footer a {
+    transition: all 0.3s ease;
+}
+
+footer a:hover {
+    transform: scale(1.2);
+    display: inline-block;
+}
+
+.footer-logo {
+    height: 25px;
+    width: auto;
+    vertical-align: middle;
+}
+
+/* Scroll suave */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Ajustes para el padding superior por el navbar fijo */
+section {
+    scroll-margin-top: 70px;
+}
+
+/* Efectos de hover en botones */
+.btn {
+    transition: all 0.3s ease;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .hero-section h1 {
+        font-size: 2.5rem;
+    }
+    
+    .counter {
+        font-size: 2rem;
+    }
+    
+    .hero-section {
+        background-attachment: scroll;
+        height: 80vh;
+    }
+    
+    .stat-number {
+        font-size: 1.8rem;
+    }
+    
+    .stat-label {
+        font-size: 0.85rem;
+    }
+    
+    .stat-bubble {
+        padding: 15px;
+    }
+    
+    .bioma-overlay {
+        padding: 40px 25px;
+        background: linear-gradient(to bottom, rgba(0, 0, 0, 0.90), rgba(0, 0, 0, 0.75));
+        overflow-y: auto;
+    }
+    
+    .bioma-content h3 {
+        font-size: 2.2rem;
+        margin-bottom: 12px;
+    }
+    
+    .bioma-content p {
+        font-size: 0.95rem;
+    }
+    
+    .bioma-description {
+        font-size: 0.95rem;
+        line-height: 1.5;
+    }
+    
+    .bioma-features li {
+        font-size: 0.9rem;
+        padding: 8px 0;
+    }
+    
+    .bioma-features i {
+        font-size: 1.2rem;
+    }
+    
+    .bioma-slide {
+        height: auto;
+        min-height: 750px;
+    }
+    
+    .bioma-stats-mini {
+        gap: 10px;
+        margin: 15px 0;
+    }
+    
+    .stat-mini {
+        min-width: 75px;
+        padding: 10px 15px;
+    }
+    
+    .stat-mini-number {
+        font-size: 1.4rem;
+    }
+    
+    .stat-mini-label {
+        font-size: 0.7rem;
+    }
+    
+    .bioma-badge {
+        font-size: 0.9rem;
+        padding: 10px 18px;
+    }
+    
+    .species-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+    
+    .species-mini img {
+        height: 80px;
+    }
+    
+    .species-mini span {
+        font-size: 0.8rem;
+        padding: 8px;
+    }
+    
+    .region-icon {
+        font-size: 2rem;
+    }
+    
+    .region-item {
+        padding: 15px;
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .region-image-mini {
+        width: 100%;
+        height: 180px;
+        margin-bottom: 15px;
+    }
+    
+    .carousel-control-prev,
+    .carousel-control-next {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .carousel-control-prev {
+        left: 10px;
+    }
+    
+    .carousel-control-next {
+        right: 10px;
+    }
+    
+    .section-title {
+        font-size: 2rem;
+    }
+    
+    .region-info-panel {
+        margin-top: 20px;
+    }
+    
+    .region-info-content {
+        max-height: 400px;
+        padding: 20px;
+    }
+    
+    .region-detail-image {
+        height: 200px;
+    }
+    
+    .map-instructions {
+        font-size: 0.85rem;
+        padding: 12px 15px;
+    }
+    
+    .map-point {
+        width: 35px;
+        height: 35px;
+        border-width: 3px;
+    }
+    
+    .map-point::before {
+        width: 15px;
+        height: 15px;
+    }
+    
+    .map-point-label {
+        font-size: 0.7rem;
+        bottom: -30px;
+        padding: 5px 10px;
+    }
+    
+    .colombia-map-container {
+        padding: 20px;
+    }
+    
+    .navbar-brand {
+        font-size: 1.3rem;
+    }
+    
+    .navbar-logo {
+        height: 35px;
+    }
+    
+    .btn-hero {
+        font-size: 1rem;
+        padding: 12px 30px;
+    }
+    
+    .card-img-container {
+        height: 200px;
+    }
+    
+    .conservation-video-wrapper {
+        border-width: 2px;
+    }
+    
+    .conservation-thumbnail {
+        padding-bottom: 100%;
+    }
+}
+
+@media (max-width: 576px) {
+    .hero-section h1 {
+        font-size: 2rem;
+    }
+    
+    .hero-section p {
+        font-size: 1.1rem;
+    }
+    
+    .stat-number {
+        font-size: 1.5rem;
+    }
+    
+    .bioma-content h3 {
+        font-size: 1.6rem;
+        margin-bottom: 10px;
+    }
+    
+    .bioma-description {
+        font-size: 0.85rem;
+        line-height: 1.4;
+        margin-bottom: 12px;
+    }
+    
+    .bioma-features li {
+        font-size: 0.8rem;
+        padding: 6px 0;
+        gap: 8px;
+    }
+    
+    .bioma-features i {
+        font-size: 1rem;
+    }
+    
+    .bioma-stats-mini {
+        gap: 8px;
+        justify-content: flex-start;
+        margin: 12px 0;
+    }
+    
+    .stat-mini {
+        min-width: 70px;
+        padding: 8px 12px;
+    }
+    
+    .stat-mini-number {
+        font-size: 1.2rem;
+    }
+    
+    .stat-mini-label {
+        font-size: 0.65rem;
+    }
+    
+    .species-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .hero-section {
+        height: 70vh;
+    }
+    
+    .stat-bubble {
+        padding: 10px;
+    }
+    
+    .region-info-content {
+        padding: 15px;
+    }
+    
+    .bioma-overlay {
+        padding: 25px 15px;
+        overflow-y: auto;
+    }
+    
+    .bioma-slide {
+        min-height: 700px;
+    }
+    
+    .map-point {
+        width: 30px;
+        height: 30px;
+        border-width: 2px;
+    }
+    
+    .map-point::before {
+        width: 12px;
+        height: 12px;
+    }
+    
+    .colombia-map-container {
+        padding: 15px;
+    }
+    
+    .conservation-thumbnail {
+        padding-bottom: 100%;
+    }
+    
+    .thumbnail-overlay i {
+        font-size: 1.5rem;
+    }
+    
+    .thumbnail-overlay span {
+        font-size: 0.75rem;
+    }
+    
+    .bioma-badge {
+        font-size: 0.75rem;
+        padding: 8px 14px;
+        margin-bottom: 10px;
+    }
+}
+
+/* Loading animation para las imágenes */
+@keyframes pulse {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
+}
+
+.card-img-placeholder {
+    animation: pulse 2s ease-in-out infinite;
+}
+
+/* Section Title */
+.section-title {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--text-dark);
+    margin-bottom: 10px;
+}
+
+/* Mapa y Regiones */
+.map-container {
+    position: relative;
+    animation: fadeIn 1s ease-out;
+}
+
+.region-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.region-item {
+    background: white;
+    border-radius: 15px;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    box-shadow: 0 4px 15px rgba(34, 197, 94, 0.1);
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.region-item:hover {
+    transform: translateX(10px);
+    box-shadow: 0 8px 25px rgba(34, 197, 94, 0.25);
+    background: linear-gradient(to right, white, var(--bg-light));
+}
+
+.region-icon {
+    font-size: 3rem;
+    transition: transform 0.3s ease;
+}
+
+.region-item:hover .region-icon {
+    transform: scale(1.2) rotate(10deg);
+}
+
+.region-content h5 {
+    color: var(--secondary-green);
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.region-content p {
+    color: var(--text-light);
+    margin-bottom: 10px;
+    font-size: 0.9rem;
+}
+
+/* Region Image Mini */
+.region-image-mini {
+    width: 120px;
+    height: 120px;
+    border-radius: 15px;
+    overflow: hidden;
+    flex-shrink: 0;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.region-image-mini img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.region-item:hover .region-image-mini {
+    transform: scale(1.1) rotate(-3deg);
+}
+
+.region-item:hover .region-image-mini img {
+    transform: scale(1.2);
+}
+
+.region-content strong {
+    color: var(--secondary-green);
+    font-weight: 700;
+}
+
+.region-content p {
+    margin-bottom: 8px;
+    font-size: 0.9rem;
+}
+
+/* Biomas Carousel */
+.bioma-slide {
+    height: 750px;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    border-radius: 25px;
+    overflow: hidden;
+}
+
+.bioma-overlay {
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.90), rgba(0, 0, 0, 0.3));
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding: 50px 40px;
+    overflow: hidden;
+}
+
+.bioma-content {
+    color: white;
+    max-width: 100%;
+}
+
+.bioma-badge {
+    display: inline-block;
+    background: linear-gradient(135deg, var(--primary-green), var(--secondary-green));
+    padding: 10px 20px;
+    border-radius: 30px;
+    font-weight: 700;
+    font-size: 0.95rem;
+    margin-bottom: 15px;
+    animation: pulse 2s ease-in-out infinite;
+    box-shadow: 0 4px 15px rgba(34, 197, 94, 0.4);
+}
+
+.bioma-content h3 {
+    font-size: 2.6rem;
+    font-weight: 900;
+    margin-bottom: 15px;
+    text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.5);
+    line-height: 1.2;
+}
+
+.bioma-content p {
+    font-size: 1.05rem;
+    margin-bottom: 15px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    line-height: 1.6;
+}
+
+.bioma-features {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.bioma-features li {
+    padding: 9px 0;
+    font-size: 0.98rem;
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    line-height: 1.5;
+}
+
+.bioma-features i {
+    color: var(--light-green);
+    font-size: 1.2rem;
+    margin-top: 2px;
+    flex-shrink: 0;
+}
+
+.bioma-content {
+    color: white;
+    max-width: 100%;
+}
+
+.bioma-badge {
+    display: inline-block;
+    background: linear-gradient(135deg, var(--primary-green), var(--secondary-green));
+    padding: 12px 24px;
+    border-radius: 30px;
+    font-weight: 700;
+    font-size: 1rem;
+    margin-bottom: 15px;
+    animation: pulse 2s ease-in-out infinite;
+    box-shadow: 0 4px 15px rgba(34, 197, 94, 0.4);
+}
+
+.bioma-content h3 {
+    font-size: 2.8rem;
+    font-weight: 900;
+    margin-bottom: 15px;
+    text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.5);
+    line-height: 1.2;
+}
+
+.bioma-content p {
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    line-height: 1.6;
+}
+
+.bioma-features {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.bioma-features li {
+    padding: 10px 0;
+    font-size: 1rem;
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    line-height: 1.5;
+}
+
+.bioma-features i {
+    color: var(--light-green);
+    font-size: 1.3rem;
+    margin-top: 2px;
+    flex-shrink: 0;
+}
+
+/* Species Grid Mini */
+.bioma-species {
+    padding: 15px 0;
+}
+
+.species-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+}
+
+.species-mini {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 15px;
+    overflow: hidden;
+    text-align: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.species-mini:hover {
+    transform: translateY(-10px) scale(1.05);
+    box-shadow: 0 10px 30px rgba(34, 197, 94, 0.4);
+}
+
+.species-mini img {
+    width: 100%;
+    height: 110px;
+    object-fit: cover;
+}
+
+.species-mini span {
+    display: block;
+    padding: 10px;
+    font-weight: 700;
+    color: var(--secondary-green);
+    font-size: 0.9rem;
+}
+
+/* Carousel Controls */
+.carousel-control-prev,
+.carousel-control-next {
+    width: 60px;
+    height: 60px;
+    background: rgba(34, 197, 94, 0.4);
+    border-radius: 50%;
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: 0.6;
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    transition: all 0.3s ease;
+}
+
+.carousel-control-prev:hover,
+.carousel-control-next:hover {
+    opacity: 0.95;
+    background: rgba(34, 197, 94, 0.7);
+    transform: translateY(-50%) scale(1.1);
+    box-shadow: 0 8px 20px rgba(34, 197, 94, 0.4);
+}
+
+.carousel-control-prev {
+    left: 20px;
+}
+
+.carousel-control-next {
+    right: 20px;
+}
+
+@media (max-width: 768px) {
+    .carousel-control-prev,
+    .carousel-control-next {
+        width: 45px;
+        height: 45px;
+        opacity: 0.5;
+    }
+    
+    .carousel-control-prev {
+        left: 5px;
+    }
+    
+    .carousel-control-next {
+        right: 5px;
+    }
+}
+
+@media (max-width: 576px) {
+    .carousel-control-prev,
+    .carousel-control-next {
+        width: 40px;
+        height: 40px;
+    }
+}
+
+.carousel-indicators button {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background: var(--primary-green);
+    border: 2px solid white;
+}
+
+.carousel-indicators button.active {
+    background: white;
+    border-color: var(--primary-green);
+}
+
+/* Mapa Interactivo con Puntos Clickeables */
+.colombia-map-container {
+    position: relative;
+    background: linear-gradient(135deg, #f0fdf4, #dcfce7);
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 10px 40px rgba(34, 197, 94, 0.2);
+    border: 3px solid var(--primary-green);
+}
+
+.colombia-map-base {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+.map-point {
+    position: absolute;
+    width: 45px;
+    height: 45px;
+    background: linear-gradient(135deg, #22c55e, #16a34a);
+    border: 4px solid white;
+    border-radius: 50%;
+    cursor: pointer;
+    transform: translate(-50%, -50%);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 10;
+    outline: none;
+    box-shadow: 0 6px 20px rgba(34, 197, 94, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.map-point::before {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: white;
+    border-radius: 50%;
+    opacity: 0.9;
+}
+
+.map-point:hover {
+    transform: translate(-50%, -50%) scale(1.4);
+    box-shadow: 0 10px 30px rgba(34, 197, 94, 0.7);
+    z-index: 20;
+}
+
+.map-point:active,
+.map-point:focus {
+    transform: translate(-50%, -50%) scale(1.3);
+    background: linear-gradient(135deg, #16a34a, #15803d);
+}
+
+.map-point.active {
+    background: linear-gradient(135deg, #15803d, #166534);
+    box-shadow: 0 8px 25px rgba(21, 128, 61, 0.8);
+    animation: pulse-active 1.5s ease-in-out infinite;
+}
+
+@keyframes pulse-active {
+    0%, 100% {
+        box-shadow: 0 8px 25px rgba(21, 128, 61, 0.8);
+    }
+    50% {
+        box-shadow: 0 12px 35px rgba(21, 128, 61, 1);
+    }
+}
+
+.map-point-pulse {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: 3px solid var(--primary-green);
+    transform: translate(-50%, -50%);
+    animation: pulse-ring 2s ease-out infinite;
+    pointer-events: none;
+}
+
+@keyframes pulse-ring {
+    0% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(2.8);
+        opacity: 0;
+    }
+}
+
+.map-point-label {
+    position: absolute;
+    bottom: -35px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: white;
+    padding: 6px 14px;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--secondary-green);
+    white-space: nowrap;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    opacity: 0;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    pointer-events: none;
+    border: 2px solid var(--primary-green);
+}
+
+.map-point:hover .map-point-label {
+    opacity: 1;
+    transform: translateX(-50%) translateY(-5px);
+}
+
+.map-instructions {
+    text-align: center;
+    margin-top: 20px;
+    padding: 15px 20px;
+    background: rgba(34, 197, 94, 0.1);
+    border-radius: 15px;
+    font-size: 0.95rem;
+    color: var(--text-dark);
+    border: 2px dashed var(--primary-green);
+}
+
+/* Tooltip del mapa */
+.map-tooltip {
+    position: absolute;
+    display: none;
+    background: white;
+    padding: 15px 20px;
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+    border: 2px solid var(--primary-green);
+    z-index: 1000;
+    pointer-events: none;
+    max-width: 300px;
+}
+
+.map-tooltip h5 {
+    margin: 0 0 8px 0;
+    color: var(--secondary-green);
+    font-size: 1.1rem;
+    font-weight: 700;
+}
+
+.map-tooltip p {
+    margin: 0;
+    color: var(--text-dark);
+    font-size: 0.9rem;
+}
+
+/* Panel de información de región */
+.region-info-panel {
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(34, 197, 94, 0.2);
+    overflow: hidden;
+    height: 100%;
+}
+
+.region-info-header {
+    background: linear-gradient(135deg, var(--primary-green), var(--secondary-green));
+    padding: 20px 30px;
+    color: white;
+}
+
+.region-info-header h3 {
+    margin: 0;
+    font-size: 1.5rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+}
+
+.region-info-content {
+    padding: 30px;
+    max-height: 500px;
+    overflow-y: auto;
+}
+
+/* Scrollbar personalizado */
+.region-info-content::-webkit-scrollbar {
+    width: 8px;
+}
+
+.region-info-content::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+
+.region-info-content::-webkit-scrollbar-thumb {
+    background: var(--primary-green);
+    border-radius: 10px;
+}
+
+.region-info-content::-webkit-scrollbar-thumb:hover {
+    background: var(--secondary-green);
+}
+
+/* Card de detalle de región */
+.region-detail-card {
+    animation: fadeIn 0.5s ease-out;
+}
+
+.region-detail-image {
+    position: relative;
+    width: 100%;
+    height: 250px;
+    border-radius: 15px;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+.region-detail-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.region-badge {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: var(--primary-green);
+    color: white;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-weight: 700;
+    font-size: 0.9rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.region-detail-body h5 {
+    color: var(--text-dark);
+    font-weight: 700;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+}
+
+.region-detail-body p {
+    color: var(--text-light);
+    line-height: 1.7;
+    margin-bottom: 20px;
+}
+
+/* Species Badges */
+.species-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.species-badges .badge {
+    padding: 8px 14px;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+/* Lista de amenazas */
+.amenazas-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.amenazas-list li {
+    padding: 10px 0;
+    border-bottom: 1px solid var(--border-gray);
+    display: flex;
+    align-items: center;
+    color: var(--text-dark);
+}
+
+.amenazas-list li:last-child {
+    border-bottom: none;
+}
+
+/* Sección Introductoria */
+.intro-section {
+    background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
+}
+
+.intro-content {
+    padding: 20px 0;
+}
+
+.intro-badge {
+    display: inline-block;
+    background: linear-gradient(135deg, var(--primary-green), var(--secondary-green));
+    color: white;
+    padding: 10px 20px;
+    border-radius: 25px;
+    font-weight: 700;
+    font-size: 0.9rem;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 15px rgba(34, 197, 94, 0.3);
+}
+
+.intro-title {
+    font-size: 2.5rem;
+    font-weight: 900;
+    color: var(--text-dark);
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+
+.intro-text {
+    font-size: 1.1rem;
+    color: var(--text-light);
+    line-height: 1.8;
+    margin-bottom: 20px;
+}
+
+.intro-text strong {
+    color: var(--secondary-green);
+    font-weight: 700;
+}
+
+.intro-highlights {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 25px;
+}
+
+.highlight-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 1rem;
+    color: var(--text-dark);
+    font-weight: 600;
+}
+
+.highlight-item i {
+    color: var(--primary-green);
+    font-size: 1.3rem;
+}
+
+/* Grid de imágenes intro */
+.intro-image-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    height: 100%;
+}
+
+.intro-img {
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    border-radius: 20px;
+    overflow: hidden;
+    min-height: 200px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.intro-img:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 10px 30px rgba(34, 197, 94, 0.4);
+}
+
+.intro-img-1 {
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+}
+
+.intro-img-2 {
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+}
+
+.intro-img-3 {
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+}
+
+.intro-img-4 {
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+}
+
+.intro-img-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+    padding: 15px;
+    color: white;
+    font-weight: 700;
+    font-size: 1.1rem;
+    transform: translateY(100%);
+    transition: transform 0.3s ease;
+}
+
+.intro-img:hover .intro-img-overlay {
+    transform: translateY(0);
+}
+
+@media (max-width: 992px) {
+    .intro-title {
+        font-size: 2rem;
+    }
+    
+    .intro-text {
+        font-size: 1rem;
+    }
+    
+    .intro-image-grid {
+        margin-top: 30px;
+    }
+}
+
+@media (max-width: 576px) {
+    .intro-title {
+        font-size: 1.8rem;
+    }
+    
+    .intro-text {
+        font-size: 0.95rem;
+    }
+    
+    .intro-badge {
+        font-size: 0.8rem;
+        padding: 8px 16px;
+    }
+    
+    .highlight-item {
+        font-size: 0.9rem;
+    }
+    
+    .intro-img {
+        min-height: 150px;
+    }
+}
+
+/* --- Ajustes responsivos adicionales para el carrusel (solo móviles) --- */
+@media (max-width: 768px) {
+  /* Mostrar primero las imágenes (bioma-species) y luego el contenido en móviles */
+  .bioma-overlay .row {
+    flex-direction: column-reverse;
+  }
+  /* Alinear el contenido al inicio para evitar que se desplace hacia el centro */
+  .bioma-overlay {
+    align-items: flex-start;
+  }
+  /* Separación entre bloque de imágenes y texto */
+  .bioma-species {
+    margin-bottom: 14px;
+  }
+}
+
+@media (max-width: 576px) {
+  /* Hacer la grilla de especies más compacta en móviles */
+  .species-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+  }
+  .species-mini img {
+    height: 90px;
+  }
+  /* Reducir ligeramente los paddings del overlay para ganar espacio útil */
+  .bioma-overlay {
+    padding: 20px 14px;
+  }
+}

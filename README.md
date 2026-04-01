@@ -1,70 +1,113 @@
-# Getting Started with Create React App
+# SpeciesCol
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+![Estado](https://img.shields.io/badge/estado-activo-2ea44f)
+![Frontend](https://img.shields.io/badge/frontend-HTML%2FCSS%2FJS-0b7285)
+![Licencia](https://img.shields.io/badge/licencia-MIT-blue)
 
-## Available Scripts
+Plataforma web educativa sobre biodiversidad en Colombia. El proyecto muestra especies emblematicas, noticias ambientales, acciones de cuidado y un mapa interactivo de departamentos/regiones.
 
-In the project directory, you can run:
+## Vista general
 
-### `npm start`
+SpeciesCol es un sitio estatico multipagina orientado a divulgacion ambiental.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- Pagina principal con hero dinamico, estadisticas y mapa SVG interactivo.
+- Seccion de especies con fichas ampliadas y datos de conservacion.
+- Seccion de noticias ambientales (nacionales e internacionales).
+- Seccion de cuidado ambiental con ODS, tips y recursos educativos.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Tecnologias usadas
 
-### `npm test`
+- HTML5
+- CSS3
+- JavaScript (ES6)
+- Bootstrap 5
+- Bootstrap Icons
+- SVG interactivo (mapa de departamentos)
+- APIs publicas para datos de biodiversidad (iNaturalist en modulo de especies)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Estructura del proyecto
 
-### `npm run build`
+```text
+speciescol1/
+|-- index.html
+|-- especies.html
+|-- noticias.html
+|-- cuidado.html
+|-- css/
+|   |-- styles.css
+|   |-- mapa-departamentos.css
+|   |-- especies.css
+|   |-- noticias.css
+|   |-- cuidado.css
+|-- js/
+|   |-- script.js
+|   |-- mapa-departamentos.js
+|   |-- especies.js
+|   |-- noticias.js
+|   |-- cuidado.js
+|-- img/
+|-- README.md
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Como se construyo el proyecto
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+El desarrollo se realizo por modulos, enfocando cada pagina en una funcion del sitio:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+1. Diseno base y navegacion
+- Se construyo una base visual con Bootstrap para lograr consistencia en navbar, grid, cards y secciones.
+- Se creo una navegacion comun entre las cuatro paginas HTML.
 
-### `npm run eject`
+2. Pagina principal (index)
+- Se desarrollo un hero con rotacion automatica de imagenes.
+- Se integro un mapa SVG interactivo de Colombia con logica JS para mostrar informacion por departamento.
+- Se agregaron secciones de biomas y contenido introductorio de biodiversidad.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+3. Modulo de especies
+- Se implemento una galeria de especies emblematicas con fichas de detalle.
+- Se estructuraron datos descriptivos (estado, habitat, distribucion, etc.) en JS.
+- Se conecto el modulo con fuentes abiertas para enriquecer informacion.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+4. Modulo de noticias
+- Se organizo un bloque de noticias destacadas y listados por categoria.
+- Se aplicaron tarjetas y formatos de lectura rapida para facilitar consulta.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+5. Modulo de cuidado
+- Se incorporo contenido educativo sobre los 17 ODS.
+- Se anadieron tips de accion ambiental y recursos audiovisuales.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+6. Refactor de estructura
+- Se reorganizaron assets por tipo para mejorar mantenimiento:
+  - `css/` para hojas de estilo.
+  - `js/` para scripts.
+  - `img/` para imagenes.
+- Se actualizaron rutas en todos los HTML para mantener el sitio funcional.
 
-## Learn More
+## Ejecucion local
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Como es un proyecto estatico, puedes abrir `index.html` directamente en el navegador.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Tambien puedes usar un servidor local simple:
 
-### Code Splitting
+```bash
+# Python
+python -m http.server 5500
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+# Luego abre
+http://localhost:5500
+```
 
-### Analyzing the Bundle Size
+## Publicacion recomendada
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+Opciones sencillas para desplegar:
 
-### Making a Progressive Web App
+- GitHub Pages
+- Netlify
+- Vercel (modo estatico)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## Autor
 
-### Advanced Configuration
+Proyecto desarrollado para fines academicos y de divulgacion ambiental.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## Licencia
 
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+MIT

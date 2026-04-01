@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Especies Colombianas - SpecialCol</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="img/logo.ico">
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/especies.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-success fixed-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold d-flex align-items-center" href="index.html">
+                <img src="img/logo.png" alt="SpecialCol Logo" class="navbar-logo me-2"> SpecialCol
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">
+                            <i class="bi bi-house-door-fill me-1"></i>Inicio
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="especies.html">
+                            <i class="bi bi-binoculars-fill me-1"></i>Especies
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="noticias.html">
+                            <i class="bi bi-newspaper me-1"></i>Noticias
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="cuidado.html">
+                            <i class="bi bi-heart-pulse-fill me-1"></i>Cuidado
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="especies-hero">
+        <div class="hero-overlay">
+            <div class="container text-center text-white">
+                <h1 class="display-3 fw-bold mb-3">Especies de Colombia</h1>
+                <p class="lead">Descubre la biodiversidad única de nuestro país</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Filtros -->
+    <section class="py-4 bg-light sticky-filters">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-12">
+                    <div class="btn-group-filter d-flex flex-wrap justify-content-center gap-2">
+                        <button type="button" class="btn btn-success active" data-filter="all">
+                            <i class="bi bi-grid-3x3-gap"></i> Todas las Especies
+                        </button>
+                        <button type="button" class="btn btn-outline-success" data-filter="comun">
+                            <i class="bi bi-check-circle"></i> Comunes
+                        </button>
+                        <button type="button" class="btn btn-outline-warning" data-filter="vulnerable">
+                            <i class="bi bi-exclamation-circle"></i> Vulnerables
+                        </button>
+                        <button type="button" class="btn btn-outline-danger" data-filter="peligro">
+                            <i class="bi bi-exclamation-triangle"></i> En Peligro
+                        </button>
+                        <button type="button" class="btn btn-outline-dark" data-filter="extinto">
+                            <i class="bi bi-x-circle"></i> Extintos
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Especies Comunes -->
+    <section id="especies-comunes" class="py-5">
+        <div class="container">
+            <div class="section-header text-center mb-5">
+                <h2 class="text-success fw-bold">
+                    <i class="bi bi-stars me-2"></i>Especies Representativas
+                </h2>
+                <p class="text-muted">Animales emblemáticos de la fauna colombiana</p>
+            </div>
+            
+            <div id="loadingComunes" class="text-center py-5">
+                <div class="spinner-border text-success" role="status">
+                    <span class="visually-hidden">Cargando...</span>
+                </div>
+                <p class="mt-3 text-muted">Cargando especies...</p>
+            </div>
+            
+            <div class="row g-4" id="especiesComunesContainer"></div>
+        </div>
+    </section>
+
+    <!-- Especies en Peligro -->
+    <section id="especies-peligro" class="py-5 bg-light">
+        <div class="container">
+            <div class="section-header text-center mb-5">
+                <h2 class="text-danger fw-bold">
+                    <i class="bi bi-exclamation-triangle me-2"></i>En Peligro de Extinción
+                </h2>
+                <p class="text-muted">Especies que requieren nuestra protección urgente</p>
+            </div>
+            
+            <div id="loadingPeligro" class="text-center py-5">
+                <div class="spinner-border text-danger" role="status">
+                    <span class="visually-hidden">Cargando...</span>
+                </div>
+                <p class="mt-3 text-muted">Cargando especies en peligro...</p>
+            </div>
+            
+            <div class="row g-4" id="especiesPeligroContainer"></div>
+        </div>
+    </section>
+
+    <!-- Especies Extintas -->
+    <section id="especies-extintas" class="py-5">
+        <div class="container">
+            <div class="section-header text-center mb-5">
+                <h2 class="text-dark fw-bold">
+                    <i class="bi bi-hourglass-bottom me-2"></i>Especies Extintas
+                </h2>
+                <p class="text-muted">Un recordatorio de lo que hemos perdido</p>
+            </div>
+            
+            <div class="row g-4" id="especiesExtintasContainer">
+                <!-- Especies extintas (datos estáticos) -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal de Detalle -->
+    <div class="modal fade" id="especieModal" tabindex="-1">
+        <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="especieModalLabel">Detalles de la Especie</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <div id="modalLoading" class="text-center py-5">
+                        <div class="spinner-border text-success" role="status"></div>
+                    </div>
+                    <div id="modalContent" style="display: none;">
+                        <div class="especie-image-container mb-3">
+                            <img id="modalImage" src="" alt="" class="img-fluid rounded">
+                        </div>
+                        <div class="especie-info">
+                            <h3 id="modalNombre" class="text-success mb-2"></h3>
+                            <p id="modalNombreCientifico" class="text-muted fst-italic mb-3"></p>
+                            
+                            <div class="info-badges mb-3">
+                                <span id="modalEstado" class="badge"></span>
+                                <span id="modalCategoria" class="badge bg-secondary"></span>
+                            </div>
+                            
+                            <h5 class="text-success mt-4"><i class="bi bi-info-circle me-2"></i>Descripción</h5>
+                            <p id="modalDescripcion"></p>
+                            
+                            <h5 class="text-success mt-4"><i class="bi bi-geo-alt me-2"></i>Hábitat</h5>
+                            <p id="modalHabitat"></p>
+                            
+                            <h5 class="text-success mt-4"><i class="bi bi-clipboard-data me-2"></i>Datos Adicionales</h5>
+                            <ul id="modalDatosAdicionales"></ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                    <a id="modalLinkExterno" href="#" target="_blank" class="btn btn-success">
+                        <i class="bi bi-box-arrow-up-right me-2"></i>Más información
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-4 mt-5">
+        <div class="container text-center">
+            <p class="mb-2"><img src="img/logo.png" alt="SpecialCol" class="footer-logo me-2"> SpecialCol - Conservación del Medio Ambiente</p>
+            <p class="mb-0">&copy; 2024 Todos los derechos reservados</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="js/especies.js"></script>
+</body>
+</html>

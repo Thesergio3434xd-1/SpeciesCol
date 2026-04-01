@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cuidado Ambiental - SpeciesCol</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="css/cuidado.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-success fixed-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold d-flex align-items-center" href="index.html">
+                <img src="img/logo.png" alt="SpecialCol Logo" class="navbar-logo me-2"> SpecialCol
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">
+                            <i class="bi bi-house-door-fill me-1"></i>Inicio
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="especies.html">
+                            <i class="bi bi-binoculars-fill me-1"></i>Especies
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="noticias.html">
+                            <i class="bi bi-newspaper me-1"></i>Noticias
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="cuidado.html">
+                            <i class="bi bi-heart-pulse-fill me-1"></i>Cuidado
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="cuidado-hero">
+        <div class="container h-100">
+            <div class="row h-100 align-items-center">
+                <div class="col-lg-8 mx-auto text-center text-white">
+                    <h1 class="display-3 fw-bold mb-4">
+                        <i class="bi bi-heart-fill text-danger me-3"></i>
+                        Cuidado Ambiental
+                    </h1>
+                    <p class="lead mb-4">
+                        Descubre cómo puedes contribuir a un planeta más sostenible
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Objetivos de Desarrollo Sostenible -->
+    <section class="py-5">
+        <div class="container">
+            <div class="section-header mb-5">
+                <div class="section-title-wrapper">
+                    <h2 class="section-title">
+                        <i class="bi bi-globe-americas me-2"></i>Objetivos de Desarrollo Sostenible
+                    </h2>
+                    <div class="section-line"></div>
+                </div>
+                <p class="section-subtitle">Los 17 ODS de la ONU para transformar nuestro mundo</p>
+            </div>
+
+            <!-- Carousel Circular de ODS -->
+            <div class="ods-carousel-container">
+                <button class="ods-nav-btn ods-nav-prev" id="odsPrev">
+                    <i class="bi bi-chevron-left"></i>
+                </button>
+                
+                <div class="ods-carousel-wrapper">
+                    <div class="ods-carousel" id="odsCarousel">
+                        <!-- Los ODS se cargarán aquí dinámicamente -->
+                    </div>
+                </div>
+                
+                <button class="ods-nav-btn ods-nav-next" id="odsNext">
+                    <i class="bi bi-chevron-right"></i>
+                </button>
+            </div>
+
+            <!-- Indicadores -->
+            <div class="ods-indicators" id="odsIndicators">
+                <!-- Los indicadores se cargarán aquí dinámicamente -->
+            </div>
+
+            <!-- Grid alternativo (opcional) -->
+            <div class="text-center mt-4">
+                <button class="btn btn-outline-success" onclick="toggleODSView()">
+                    <i class="bi bi-grid-3x3-gap-fill me-2"></i>
+                    <span id="viewToggleText">Ver en Cuadrícula</span>
+                </button>
+            </div>
+
+            <div class="ods-grid-view d-none" id="odsGridView">
+                <!-- Grid view se cargará aquí -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Tips de Cuidado Ambiental -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <div class="section-header mb-5">
+                <div class="section-title-wrapper">
+                    <h2 class="section-title">
+                        <i class="bi bi-lightbulb-fill me-2"></i>Tips para Cuidar el Medio Ambiente
+                    </h2>
+                    <div class="section-line"></div>
+                </div>
+                <p class="section-subtitle">Acciones simples que generan un gran impacto</p>
+            </div>
+
+            <div class="tips-grid-custom" id="tipsContainer">
+                <!-- Los tips se cargarán aquí dinámicamente -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Videos Recomendados -->
+    <section class="py-5">
+        <div class="container">
+            <div class="section-header mb-5">
+                <div class="section-title-wrapper">
+                    <h2 class="section-title">
+                        <i class="bi bi-play-circle-fill me-2"></i>Videos Educativos
+                    </h2>
+                    <div class="section-line"></div>
+                </div>
+                <p class="section-subtitle">Aprende más sobre sostenibilidad y conservación</p>
+            </div>
+
+            <div class="row g-4" id="videosContainer">
+                <!-- Los videos se cargarán aquí dinámicamente -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Acciones Cotidianas -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <div class="section-header mb-5">
+                <div class="section-title-wrapper">
+                    <h2 class="section-title">
+                        <i class="bi bi-check2-circle me-2"></i>¿Cómo Cuidar el Medio Ambiente?
+                    </h2>
+                    <div class="section-line"></div>
+                </div>
+                <p class="section-subtitle">Acciones diarias para un futuro sostenible</p>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-3">
+                    <div class="accion-card">
+                        <div class="accion-icon">
+                            <i class="bi bi-droplet-fill"></i>
+                        </div>
+                        <h4>Ahorra Agua</h4>
+                        <ul>
+                            <li>Cierra el grifo al lavarte los dientes</li>
+                            <li>Duchas cortas (5-10 minutos)</li>
+                            <li>Repara fugas inmediatamente</li>
+                            <li>Reutiliza agua de lluvia</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-3">
+                    <div class="accion-card">
+                        <div class="accion-icon">
+                            <i class="bi bi-lightning-charge-fill"></i>
+                        </div>
+                        <h4>Ahorra Energía</h4>
+                        <ul>
+                            <li>Usa bombillas LED</li>
+                            <li>Desconecta aparatos sin uso</li>
+                            <li>Aprovecha luz natural</li>
+                            <li>Usa electrodomésticos eficientes</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-3">
+                    <div class="accion-card">
+                        <div class="accion-icon">
+                            <i class="bi bi-recycle"></i>
+                        </div>
+                        <h4>Recicla y Reutiliza</h4>
+                        <ul>
+                            <li>Separa residuos correctamente</li>
+                            <li>Reutiliza envases y bolsas</li>
+                            <li>Compra productos reciclados</li>
+                            <li>Composta residuos orgánicos</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-3">
+                    <div class="accion-card">
+                        <div class="accion-icon">
+                            <i class="bi bi-tree-fill"></i>
+                        </div>
+                        <h4>Protege la Naturaleza</h4>
+                        <ul>
+                            <li>Planta árboles nativos</li>
+                            <li>No compres animales exóticos</li>
+                            <li>Respeta áreas protegidas</li>
+                            <li>Denuncia delitos ambientales</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal ODS -->
+    <div class="modal fade" id="odsModal" tabindex="-1">
+        <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="odsModalLabel">Objetivo de Desarrollo Sostenible</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body" id="odsModalBody">
+                    <!-- Contenido dinámico -->
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                    <a id="odsLink" href="#" target="_blank" class="btn btn-success">
+                        <i class="bi bi-box-arrow-up-right me-2"></i>Más información
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-4 mt-5">
+        <div class="container text-center">
+            <p class="mb-0">&copy; 2024 SpeciesCol - Biodiversidad de Colombia</p>
+            <p class="mb-0 mt-2">
+                <a href="https://www.minambiente.gov.co/" target="_blank" class="text-white text-decoration-none">
+                    <i class="bi bi-link-45deg"></i> Ministerio de Ambiente
+                </a>
+            </p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/cuidado.js"></script>
+</body>
+</html>
